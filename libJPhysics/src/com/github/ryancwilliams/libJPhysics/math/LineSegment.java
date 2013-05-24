@@ -143,5 +143,14 @@ public class LineSegment {
     public double getInclination() {
         return Math.acos((this.getZLength())/(this.getMagnitude()));
     }
+
+    /**
+     * The toString method.
+     * @return this object as a string.
+     */
+    @Override
+    public String toString() {
+        return "LineSegment{" + "p1=" + p1 + ", p2=" + p2 + '}';
+    }
     
 }
