@@ -96,7 +96,14 @@ public class Point {
     public void setZ(double z) {
         this.z = z;
     }
-    
-    
+
+    /**
+     * The toString method. 
+     * @return this object as a string.
+     */
+    @Override
+    public String toString() {
+        return "Point{" + "x=" + x + ", y=" + y + ", z=" + z + '}';
+    }
     
 }
