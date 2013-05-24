@@ -152,7 +152,7 @@ public class Vector extends LineSegment {
      * Calculates the cross product of 2 vectors.
      * @param a the first vector.
      * @param b the second vector.
-     * @return 
+     * @return the result vector.
      */
     public static Vector crossProduct(Vector a, Vector b) {
         //Caculate new lengths
@@ -162,5 +162,16 @@ public class Vector extends LineSegment {
         
         //return new Vector
         return new Vector(newX, newY, newZ);
+    }
+    
+    /**
+     * Calculates the scalar triple product, or box product, of 3 vectors.
+     * @param a the first vector.
+     * @param b the second vector.
+     * @param c the third vector.
+     * @return the result vector.
+     */
+    public static double boxProduct(Vector a, Vector b, Vector c) {
+        return Vector.dotProduct(a, Vector.crossProduct(b, c));
     }
 }

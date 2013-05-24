@@ -21,7 +21,7 @@ public class TestMain {
         Vector a = new Vector(1, 2, 3);
         Vector b = new Vector(3, 4, 5);
         
-        Vector result = Vector.crossProduct(a, b);
+        double result = Vector.dotProduct(a, b);
         
         System.out.println(result);
     }
