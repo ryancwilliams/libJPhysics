@@ -5,7 +5,8 @@
 package com.github.ryancwilliams.libJPhysics.math;
 
 /**
- * A object that represents a vector in a 3d coordinate system.
+ * A object that represents a vector in a 3d coordinate system. 
+ * This class also provides functions for working with Vectors.
  * @author ryancwilliams
  */
 public class Vector extends LineSegment {
@@ -145,5 +146,21 @@ public class Vector extends LineSegment {
         return (a.getXLength()*b.getXLength())+
                 (a.getYLength()*b.getYLength())+
                 (a.getZLength()*b.getZLength());
+    }
+    
+    /**
+     * Calculates the cross product of 2 vectors.
+     * @param a the first vector.
+     * @param b the second vector.
+     * @return 
+     */
+    public static Vector crossProduct(Vector a, Vector b) {
+        //Caculate new lengths
+        double newX = (a.getYLength()*b.getZLength())-(a.getZLength()*b.getYLength());
+        double newY = (a.getZLength()*b.getXLength())-(a.getXLength()*b.getZLength());
+        double newZ = (a.getXLength()*b.getYLength())-(a.getYLength()*b.getXLength());
+        
+        //return new Vector
+        return new Vector(newX, newY, newZ);
     }
 }
