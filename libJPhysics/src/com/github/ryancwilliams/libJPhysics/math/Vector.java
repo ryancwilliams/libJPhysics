@@ -11,6 +11,19 @@ package com.github.ryancwilliams.libJPhysics.math;
 public class Vector extends LineSegment {
     
     /**
+     * Standard basis for the x axis on the Euclidean plane
+     */
+    public static final Vector EX = new Vector(1, 0, 0);
+    /**
+     * Standard basis for the y axis on the Euclidean plane
+     */
+    public static final Vector EY = new Vector(0, 1, 0);
+    /**
+     * Standard basis for the z axis on the Euclidean plane
+     */
+    public static final Vector EZ = new Vector(0, 0, 1);
+    
+    /**
      * Creates a Vector from a set of points
      * @param p1 the initial point of the Vector
      * @param p2 the terminal point of the Vector
@@ -70,4 +83,67 @@ public class Vector extends LineSegment {
         this(new Point(x, y));
     }
     
+    /**
+     * Multiplies a vector by a scalar.
+     * @param vector the vector to multiply
+     * @param scalar the scalar to multiply by.
+     * @return the result vector
+     */
+    public static Vector scalarMultiply(Vector vector, double scalar) {
+        return new Vector(vector.getXLength()*scalar, 
+                vector.getYLength()*scalar, 
+                vector.getZLength()*scalar);
+    }
+    
+    /**
+     * Adds 2 vectors together. 
+     * The addition may be represented graphically by placing the tail of the 
+     * arrow b at the head of the arrow a, and then drawing an arrow from the 
+     * tail of a to the head of b. The new arrow drawn represents the vector 
+     * a + b
+     * @param a the first vector to add
+     * @param b the second vector to add
+     * @return the result vector
+     */
+    public static Vector add(Vector a, Vector b) {
+        //Caculate new lengths
+        double newX = a.getXLength() + b.getXLength();
+        double newY = a.getYLength() + b.getYLength();
+        double newZ = a.getZLength() + b.getZLength();
+        
+        //Return new vector
+        return new Vector(newX, newY, newZ);
+    }
+    
+    /**
+     * Subtracts a vector from another vector. 
+     * The subtraction may be represented graphically by placing the tail of the 
+     * arrow b at the tail of the arrow a, and then drawing an arrow from the 
+     * head of b to the head of a. The new arrow drawn represents the vector 
+     * a - b
+     * @param a the vector to subtract from
+     * @param b the vector to subtract
+     * @return the result vector
+     */
+    public static Vector subtract(Vector a, Vector b) {
+        //Caculate new lengths
+        double newX = a.getXLength() - b.getXLength();
+        double newY = a.getYLength() - b.getYLength();
+        double newZ = a.getZLength() - b.getZLength();
+        
+        //Return new vector
+        return new Vector(newX, newY, newZ);
+    }
+    
+    /**
+     * Calculates the dot product of 2 vectors.
+     * @param a the first vector.
+     * @param b the second vector.
+     * @return the result vector.
+     */
+    public static double dotProduct(Vector a, Vector b) {
+        return (a.getXLength()*b.getXLength())+
+                (a.getYLength()*b.getYLength())+
+                (a.getZLength()*b.getZLength());
+    }
 }
