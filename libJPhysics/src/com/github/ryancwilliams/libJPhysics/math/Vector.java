@@ -44,13 +44,30 @@ public class Vector extends LineSegment {
     }
     
     /**
+     * Creates a bound vector from a point.
+     * @param terminal the terminal point of the Vector
+     */
+    public Vector(Point terminal) {
+        super(Point.origin, terminal);
+    }
+    
+    /**
      * Creates a bound vector from a set of 3d coordinates
      * @param x the x coordinate of the terminal point
      * @param y the y coordinate of the terminal point
      * @param z the z coordinate of the terminal point
      */
     public Vector(double x, double y, double z) {
-        super(Point.origin, new Point(x, y, z));
+        this(new Point(x, y, z));
+    }
+    
+    /**
+     * Creates a bound vector from a set of 2d coordinates
+     * @param x the x coordinate of the terminal point
+     * @param y the y coordinate of the terminal point
+     */
+    public Vector(double x, double y) {
+        this(new Point(x, y));
     }
     
 }
