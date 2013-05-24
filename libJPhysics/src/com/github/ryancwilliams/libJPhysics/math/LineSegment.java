@@ -53,7 +53,51 @@ public class LineSegment {
     public LineSegment(double x1, double y1, double x2, double y2) {
         this(new Point(x1, y1), new Point(x2, y2));
     }
+
+    /**
+     * Gets the first point of this LineSegment
+     * @return the first point of this LineSegment
+     */
+    public Point getP1() {
+        return p1;
+    }
+
+    /**
+     * Sets the first point of this LineSegment
+     * @param p1 the first point of this LineSegment
+     */
+    public void setP1(Point p1) {
+        this.p1 = p1;
+    }
+
+    /**
+     * Gets the second point of this LineSegment
+     * @return the second point of this LineSegment
+     */
+    public Point getP2() {
+        return p2;
+    }
+
+    /**
+     * Sets the second point of this LineSegment
+     * @param p2 the second point of this LineSegment
+     */
+    public void setP2(Point p2) {
+        this.p2 = p2;
+    }
     
-    
+    /**
+     * Calculates the magnitude of this LineSegment
+     * @return the magnitude of this LineSegment
+     */
+    public double getMagnitude() {
+        //Caculate Length of the unit lines
+        double xLength = Math.abs(this.p2.getX() - this.p1.getX());
+        double yLength = Math.abs(this.p2.getY() - this.p1.getY());
+        double zLength = Math.abs(this.p2.getZ() - this.p1.getZ());
+        
+        //Caculate distance between the points
+        return Math.sqrt(xLength*xLength + yLength*yLength + zLength*zLength);
+    }
     
 }
