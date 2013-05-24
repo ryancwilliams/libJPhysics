@@ -61,7 +61,7 @@ public class Vector extends LineSegment {
      * @param terminal the terminal point of the Vector
      */
     public Vector(Point terminal) {
-        super(Point.origin, terminal);
+        super(Point.ORIGIN, terminal);
     }
     
     /**

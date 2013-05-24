@@ -11,9 +11,9 @@ package com.github.ryancwilliams.libJPhysics.math;
 public class Point {
     
     /**
-     * A point that represents the origin of the coordinate system  
+     * A point that represents the ORIGIN of the coordinate system  
      */
-    public final static Point origin = new Point(0, 0, 0);
+    public final static Point ORIGIN = new Point(0, 0, 0);
     
     /**
      * The x coordinate of this point
