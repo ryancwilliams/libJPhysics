@@ -11,18 +11,18 @@ package com.github.ryancwilliams.libJPhysics.math;
 public class LineSegment {
     
     /**
-     * First point of the vector
+     * First point of the LineSegment
      */
     private Point p1;
     /**
-     * Second point of the vector
+     * Second point of the LineSegment
      */
     private Point p2;
 
     /**
      * Creates a LineSegment from a set of points
-     * @param p1 the first point of the vector
-     * @param p2 the second point of the vector
+     * @param p1 the first point of the LineSegment
+     * @param p2 the second point of the LineSegment
      */
     public LineSegment(Point p1, Point p2) {
         this.p1 = p1;
