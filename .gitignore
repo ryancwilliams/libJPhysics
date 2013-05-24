@@ -1,2 +1,4 @@
 .DS_store
 /libJPhysics/nbproject/private/
+/libJPhysics/build/
+/libJPhysics/dist/

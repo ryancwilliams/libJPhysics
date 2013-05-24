@@ -87,17 +87,61 @@ public class LineSegment {
     }
     
     /**
+     * Calculates the length along the x axis
+     * @return the length along the x axis
+     */
+    public double getXLength() {
+        return Math.abs(this.p2.getX() - this.p1.getX());
+    }
+    
+    /**
+     * Calculates the length along the y axis
+     * @return the length along the x axis
+     */
+    public double getYLength() {
+        return Math.abs(this.p2.getY() - this.p1.getY());
+    }
+    
+    /**
+     * Calculates the length along the z axis
+     * @return the length along the z axis
+     */
+    public double getZLength() {
+        return Math.abs(this.p2.getZ() - this.p1.getZ());
+    }
+    
+    /**
      * Calculates the magnitude of this LineSegment
      * @return the magnitude of this LineSegment
      */
     public double getMagnitude() {
         //Caculate Length of the unit lines
-        double xLength = Math.abs(this.p2.getX() - this.p1.getX());
-        double yLength = Math.abs(this.p2.getY() - this.p1.getY());
-        double zLength = Math.abs(this.p2.getZ() - this.p1.getZ());
+        double xLength = this.getXLength();
+        double yLength = this.getYLength();
+        double zLength = this.getZLength();
         
         //Caculate distance between the points
         return Math.sqrt(xLength*xLength + yLength*yLength + zLength*zLength);
+    }
+    
+    /**
+     * Calculates the azimuthal angle, in radians, of this LineSegment 
+     * as measured at the first point of this LineSegment
+     * @return the azimuthal angle, in radians, of this LineSegment as 
+     * measured at the first point of this LineSegment
+     */
+    public double getAzimuth() {
+        return Math.atan2(this.getYLength(), this.getXLength());
+    }
+    
+    /**
+     * Calculates the polar angle, in radians, of this LineSegment 
+     * as measured at the first point of this LineSegment
+     * @return the polar angle, in radians, of this LineSegment as 
+     * measured at the first point of this LineSegment
+     */
+    public double getInclination() {
+        return Math.acos((this.getZLength())/(this.getMagnitude()));
     }
     
 }
