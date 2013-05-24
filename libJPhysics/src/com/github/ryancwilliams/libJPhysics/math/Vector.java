@@ -169,9 +169,21 @@ public class Vector extends LineSegment {
      * @param a the first vector.
      * @param b the second vector.
      * @param c the third vector.
-     * @return the result vector.
+     * @return the result scalar.
      */
     public static double boxProduct(Vector a, Vector b, Vector c) {
         return Vector.dotProduct(a, Vector.crossProduct(b, c));
     }
+    
+    /**
+     * Calculates the vector triple product of 3 vectors.
+     * @param a the first vector.
+     * @param b the second vector.
+     * @param c the third vector.
+     * @return the result vector.
+     */
+    public static Vector vectorTripleProduct(Vector a, Vector b, Vector c) {
+        return Vector.crossProduct(a, Vector.crossProduct(b, c));
+    }
+    
 }
